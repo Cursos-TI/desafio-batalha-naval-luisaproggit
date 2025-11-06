@@ -31,15 +31,14 @@ int main() {
     tabuleiro[7][8] = 3;
 
 //Navio na diagonal
-    tabuleiro[7][1] = 3;
-    tabuleiro[8][2] = 3;
-    tabuleiro[9][3] = 3;
+    tabuleiro[6][1] = 3;
+    tabuleiro[7][2] = 3;
+    tabuleiro[8][3] = 3;
 
 //Navio na diagonal secundária
     tabuleiro[0][8] = 3;
     tabuleiro[1][7] = 3;
     tabuleiro[2][6] = 3;
-
 
 
 //Posição das Coordenadas Navios Vertical, Horizontal 
@@ -82,6 +81,9 @@ int main() {
         }
         printf("\n");
     }
+
+
+
 
  
   
