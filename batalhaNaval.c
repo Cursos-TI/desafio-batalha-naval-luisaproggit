@@ -21,9 +21,9 @@ int main() {
     int navio2[3];
 
 //Navio Vertical
-    tabuleiro[0][1] = 3;
-    tabuleiro[0][2] = 3;
-    tabuleiro[0][3] = 3;
+    tabuleiro[1][1] = 3;
+    tabuleiro[1][2] = 3;
+    tabuleiro[1][3] = 3;
 
 //Navio Horizontal
     tabuleiro[5][8] = 3;
@@ -66,7 +66,7 @@ int main() {
 //Imprimindo Tabuleiro.
     printf("Tabuleiro Batalha Naval\n");
     printf(" ");//Espaços para alinhar as colunas.
-
+    
     for(int j = 0; j < 10; j++){
     printf("%c", linha[j]); //Imprimindo numeros das colunas.
 
@@ -74,9 +74,9 @@ int main() {
     printf("\n");
 
     for(int i = 0; i < 10; i++){
-        printf("%d", i + 1); //Imprimindo numeros das linhas.
+        printf("%d", i + 0); //Imprimindo numeros das linhas.
         for(int j = 0; j < 10; j++){
-            printf("%d", tabuleiro[i] [j]); 
+            printf("%d", tabuleiro[i][j]); 
 
         }
         printf("\n");
