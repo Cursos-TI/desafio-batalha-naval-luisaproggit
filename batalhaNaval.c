@@ -5,6 +5,96 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 int main() {
+    char linha[10] = {'A', 'B', 'C', 'D', 'E', 'F','G', 'H', 'I', 'J'};
+    int tabuleiro[10][10] = {0};//Declaração para matriz tabuleiro.
+
+//Inicializando tabuleiro(com numeros zero)
+    for(int i = 0; i < 10; i++){ 
+        for(int j = 0; j < 10; j++){
+            tabuleiro[i][j] = 0;
+        }
+    } 
+    
+//Posicionando os navios
+
+    int navio1[3];
+    int navio2[3];
+
+//Navio Vertical
+    tabuleiro[0][1] = 3;
+    tabuleiro[0][2] = 3;
+    tabuleiro[0][3] = 3;
+
+//Navio Horizontal
+    tabuleiro[5][8] = 3;
+    tabuleiro[6][8] = 3;
+    tabuleiro[7][8] = 3;
+
+//Navio na diagonal
+    tabuleiro[7][1] = 3;
+    tabuleiro[8][2] = 3;
+    tabuleiro[9][3] = 3;
+
+//Navio na diagonal secundária
+    tabuleiro[0][8] = 3;
+    tabuleiro[1][7] = 3;
+    tabuleiro[2][6] = 3;
+
+
+
+//Posição das Coordenadas Navios Vertical, Horizontal 
+
+    for (int i = 0; i < 10; i++) {
+        for ( int j = 0; j < 10; j++) {
+            if(tabuleiro[i][j] == 3) {
+                printf("(%d, %d)\n", i, j);
+            }
+            
+        }
+    }
+
+//Posição das Coordenadas Navios na Diagonal
+
+    for (int i = 0; i < 10; i++) {
+        for ( int j = 0; j < 10; j++) {
+            if(tabuleiro[i][j] == 3) {
+                printf("(%d, %d)\n", i, j);
+            }
+        
+        }
+    }
+
+//Imprimindo Tabuleiro.
+    printf("Tabuleiro Batalha Naval\n");
+    printf(" ");//Espaços para alinhar as colunas.
+
+    for(int j = 0; j < 10; j++){
+    printf("%c", linha[j]); //Imprimindo numeros das colunas.
+
+    }
+    printf("\n");
+
+    for(int i = 0; i < 10; i++){
+        printf("%d", i + 1); //Imprimindo numeros das linhas.
+        for(int j = 0; j < 10; j++){
+            printf("%d", tabuleiro[i] [j]); 
+
+        }
+        printf("\n");
+    }
+
+ 
+  
+    return 0;
+
+}
+
+
+
+
+
+    
+
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
@@ -36,5 +126,5 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
-    return 0;
-}
+
+
