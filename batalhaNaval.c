@@ -58,15 +58,15 @@ int main() {
     int B[linhas][colunas] = {{9, 8, 7, 6, 5},{4, 3, 2, 1, 0}};
     int matriz[5][5];
 
-    tabuleiro[1][3] = 5;
-    tabuleiro[2][2] = 5;
-    tabuleiro[2][3] = 5;
-    tabuleiro[2][4] = 5;
-    tabuleiro[3][1] = 5;
-    tabuleiro[3][2] = 5;
-    tabuleiro[3][3] = 5;
-    tabuleiro[3][4] = 5;
-    tabuleiro[3][5] = 5;
+    tabuleiro[1][3] = 1;
+    tabuleiro[2][2] = 1;
+    tabuleiro[2][3] = 1;
+    tabuleiro[2][4] = 1;
+    tabuleiro[3][1] = 1;
+    tabuleiro[3][2] = 1;
+    tabuleiro[3][3] = 1;
+    tabuleiro[3][4] = 1;
+    tabuleiro[3][5] = 1;
 
 printf("Habilidade em Cone\n");
 int j;
@@ -80,18 +80,18 @@ int j;
             }
             }else if(i == 2){
                 if(j == 3){
-                    printf("5");
+                    printf("1");
                 }else{
                     printf("0");
                 }
             }else if (i == 3) {
                 if (j >= 2 && j  <= 4 ) {
-                    printf("5"); 
+                    printf("1"); 
                 }else{
                     printf("0");
                 }
             }else if (i == 4){
-                printf("5");
+                printf("1");
             
             }else if(i == 5) {
                 if(j == 3) {
@@ -109,26 +109,26 @@ int j;
  //Habilidade especiais em cruz
  //matriz em cruz
 
-    tabuleiro[5][3] = 4;
-    tabuleiro[6][3] = 4;
-    tabuleiro[7][1] = 4;
-    tabuleiro[7][2] = 4;
-    tabuleiro[7][3] = 4;
-    tabuleiro[7][4] = 4;
-    tabuleiro[7][5] = 4;
-    tabuleiro[8][3] = 4;
-    tabuleiro[9][3] = 4;
+    tabuleiro[5][3] = 1;
+    tabuleiro[6][3] = 1;
+    tabuleiro[7][1] = 1;
+    tabuleiro[7][2] = 1;
+    tabuleiro[7][3] = 1;
+    tabuleiro[7][4] = 1;
+    tabuleiro[7][5] = 1;
+    tabuleiro[8][3] = 1;
+    tabuleiro[9][3] = 1;
 
     for(int i = 0; i < 5; i++){
         for(int j = 0; j < 5; j++) {
             if(i == 2 || j == 2) {
-                matriz[i][j] = 4;
+                matriz[i][j] = 1;
             
             }else{
                 matriz[i][j] = 0;
 
                 if(i == 2 || j == 2) {
-                    matriz[j][i] = 4;
+                    matriz[j][i] = 1;
 
                 }else{
                     matriz[j][i] = 0;
@@ -150,11 +150,11 @@ for(int i = 0;i < 5; i++) {
 
 //Habilidades especiais em Octaedro
 //matriz em octaedro
-    tabuleiro[4][6] = 2;
-    tabuleiro[5][5] = 2;
-    tabuleiro[5][6] = 2;
-    tabuleiro[5][7] = 2;
-    tabuleiro[6][6] = 2;
+    tabuleiro[4][6] = 1;
+    tabuleiro[5][5] = 1;
+    tabuleiro[5][6] = 1;
+    tabuleiro[5][7] = 1;
+    tabuleiro[6][6] = 1;
     
 
 printf("Habilidade em Octaedro\n");
@@ -168,19 +168,19 @@ for(int i = 1; i <= 5; i++) {
             }
             }else if(i == 2){
                 if(j == 3){
-                    printf("2");
+                    printf("1");
                 }else{
                     printf("0");
                 }
             }else if (i == 3) {
                 if (j >= 2 && j  <= 4){
-                    printf("2"); 
+                    printf("1"); 
                 }else{
                     printf("0");
                 }
             }else if(i == 4){
                 if(j == 3){
-                    printf("2");
+                    printf("1");
                 }else{
                     printf("0");
                 }
