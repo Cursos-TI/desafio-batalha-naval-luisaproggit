@@ -1,9 +1,5 @@
 #include <stdio.h>
 
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
-
 int main() {
     char linha[10] = {'A', 'B', 'C', 'D', 'E', 'F','G', 'H', 'I', 'J'};
     int tabuleiro[10][10] = {0};//Declaração para matriz tabuleiro.
@@ -25,42 +21,197 @@ int main() {
     tabuleiro[1][2] = 3;
     tabuleiro[1][3] = 3;
 
-//Navio Horizontal
-    tabuleiro[5][8] = 3;
-    tabuleiro[6][8] = 3;
-    tabuleiro[7][8] = 3;
-
-//Navio na diagonal
-    tabuleiro[6][1] = 3;
-    tabuleiro[7][2] = 3;
-    tabuleiro[8][3] = 3;
-
-//Navio na diagonal secundária
-    tabuleiro[0][8] = 3;
-    tabuleiro[1][7] = 3;
-    tabuleiro[2][6] = 3;
-
-
-//Posição das Coordenadas Navios Vertical, Horizontal 
-
     for (int i = 0; i < 10; i++) {
         for ( int j = 0; j < 10; j++) {
             if(tabuleiro[i][j] == 3) {
                 printf("(%d, %d)\n", i, j);
+            
             }
             
         }
     }
 
-//Posição das Coordenadas Navios na Diagonal
+
+//Navio Horizontal
+    tabuleiro[3][8] = 3;
+    tabuleiro[4][8] = 3;
+    tabuleiro[5][8] = 3;
+    for (int i = 0; i < 10; i++) {
+        for ( int j = 0; j < 10; j++) {
+            if(tabuleiro[i][j] == 3) {
+             printf("(%d, %d)\n", i, j);
+            
+            }
+            
+        }
+    }
+
+
+//Navio na diagonal
+    tabuleiro[7][7] = 3;
+    tabuleiro[8][8] = 3;
+    tabuleiro[9][9] = 3;
+    for (int i = 0; i < 10; i++) {
+        for ( int j = 0; j < 10; j++) {
+            if(tabuleiro[i][j] == 3) {
+                printf("(%d, %d)\n", i, j);
+            
+            }
+            
+        }
+    }
+
+
+//Navio na diagonal secundária
+    tabuleiro[0][9] = 3;
+    tabuleiro[1][8] = 3;
+    tabuleiro[2][7] = 3;
 
     for (int i = 0; i < 10; i++) {
         for ( int j = 0; j < 10; j++) {
             if(tabuleiro[i][j] == 3) {
                 printf("(%d, %d)\n", i, j);
+            
             }
-        
+            
         }
+    }
+
+
+
+//Posição das Coordenadas Navios 
+
+    for (int i = 0; i < 10; i++) {
+        for ( int j = 0; j < 10; j++) {
+            if(tabuleiro[i][j] == 3) {
+                printf("(%d, %d)\n", i, j);
+            
+            }
+            
+        }
+    }
+
+//Habilidade especiais em cone
+//matriz em cone
+
+ #define linhas 5
+ #define colunas 5
+    
+    int A[linhas][colunas] = {{0, 1, 2, 3, 4},{5, 6, 7, 8, 9}};
+    int B[linhas][colunas] = {{9, 8, 7, 6, 5},{4, 3, 2, 1, 0}};
+    int matriz[5][5];
+ 
+printf("Habilidade em Cone\n");
+    for(int i = 1; i <= 5; i++) {
+        for(int j = 1; j <= 5; j++) { 
+            if(i == 1){
+                if(j == 3){
+                printf("0");
+            }else{
+                printf("0");
+            }
+            }else if(i == 2){
+                if(j == 3){
+                    printf("5");
+                }else{
+                    printf("0");
+                }
+            }else if (i == 3) {
+                if (j >= 2 && j  <= 4 ) {
+                    printf("5"); 
+                }else{
+                    printf("0");
+                }
+            }else if (i == 4){
+                printf("5");
+            
+            }else if(i == 5) {
+                if(j == 3) {
+                    printf("0");
+                }else{
+                    printf("0");
+                }
+            }
+             
+        }
+                      
+        printf("\n");
+
+    }
+
+ //Habilidade especiais em cruz
+ //matriz em cruz
+    for(int i = 0;i < 5; i++) {
+        for(int j = 0; j < 5; j++) {
+            if(i == 2 || j == 2) {
+                matriz[i][j] = 5;
+            
+            }else{
+                matriz[i][j] = 0;
+
+                if(i == 2 || j == 2) {
+                    matriz[j][i] = 5;
+
+                }else{
+                    matriz[j][i] = 0;
+                }
+            }
+        }
+    }
+
+//imprimindo matriz cruz
+printf("Habilidade em cruz\n");
+
+for(int i = 0;i < 5; i++) {
+    for(int j = 0; j < 5; j++) {
+        printf("%d", matriz[i][j]);
+    }
+    printf("\n");
+
+}
+
+//Habilidade em Octaedro
+
+printf("Habilidade em Octaedro\n");
+for(int i = 1; i <= 5; i++) {
+        for(int j = 1; j <= 5; j++) { 
+            if(i == 1){
+                if(j == 3){
+                printf("0");
+            }else{
+                printf("0");
+            }
+            }else if(i == 2){
+                if(j == 3){
+                    printf("5");
+                }else{
+                    printf("0");
+                }
+            }else if (i == 3) {
+                if (j >= 2 && j  <= 4){
+                    printf("5"); 
+                }else{
+                    printf("0");
+                }
+            }else if(i == 4){
+                if(j == 3){
+                    printf("5");
+                }else{
+                    printf("0");
+                }
+            
+            }else if(i == 5) {
+                if(j == 3) {
+                    printf("0");
+                }else{
+                    printf("0");
+                }
+            }
+             
+        }
+                      
+        printf("\n");
+
     }
 
 //Imprimindo Tabuleiro.
@@ -68,7 +219,7 @@ int main() {
     printf(" ");//Espaços para alinhar as colunas.
     
     for(int j = 0; j < 10; j++){
-    printf("%c", linha[j]); //Imprimindo numeros das colunas.
+        printf("%c", linha[j]); //Imprimindo numeros das colunas.
 
     }
     printf("\n");
@@ -83,10 +234,6 @@ int main() {
     }
 
 
-
-
- 
-  
     return 0;
 
 }
