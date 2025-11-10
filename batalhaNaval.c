@@ -21,65 +21,22 @@ int main() {
     tabuleiro[1][2] = 3;
     tabuleiro[1][3] = 3;
 
-    for (int i = 0; i < 10; i++) {
-        for ( int j = 0; j < 10; j++) {
-            if(tabuleiro[i][j] == 3) {
-                printf("(%d, %d)\n", i, j);
-            
-            }
-            
-        }
-    }
-
-
 //Navio Horizontal
     tabuleiro[3][8] = 3;
     tabuleiro[4][8] = 3;
     tabuleiro[5][8] = 3;
-    for (int i = 0; i < 10; i++) {
-        for ( int j = 0; j < 10; j++) {
-            if(tabuleiro[i][j] == 3) {
-             printf("(%d, %d)\n", i, j);
-            
-            }
-            
-        }
-    }
-
 
 //Navio na diagonal
     tabuleiro[7][7] = 3;
     tabuleiro[8][8] = 3;
     tabuleiro[9][9] = 3;
-    for (int i = 0; i < 10; i++) {
-        for ( int j = 0; j < 10; j++) {
-            if(tabuleiro[i][j] == 3) {
-                printf("(%d, %d)\n", i, j);
-            
-            }
-            
-        }
-    }
-
 
 //Navio na diagonal secundária
     tabuleiro[0][9] = 3;
     tabuleiro[1][8] = 3;
     tabuleiro[2][7] = 3;
 
-    for (int i = 0; i < 10; i++) {
-        for ( int j = 0; j < 10; j++) {
-            if(tabuleiro[i][j] == 3) {
-                printf("(%d, %d)\n", i, j);
-            
-            }
-            
-        }
-    }
-
-
-
-//Posição das Coordenadas Navios 
+//Imprimindo as posições Navios
 
     for (int i = 0; i < 10; i++) {
         for ( int j = 0; j < 10; j++) {
@@ -100,7 +57,7 @@ int main() {
     int A[linhas][colunas] = {{0, 1, 2, 3, 4},{5, 6, 7, 8, 9}};
     int B[linhas][colunas] = {{9, 8, 7, 6, 5},{4, 3, 2, 1, 0}};
     int matriz[5][5];
- 
+
 printf("Habilidade em Cone\n");
     for(int i = 1; i <= 5; i++) {
         for(int j = 1; j <= 5; j++) { 
@@ -139,6 +96,14 @@ printf("Habilidade em Cone\n");
 
     }
 
+for (int i = 0; i < 5; i++) {
+        for ( int j = 0; j < 5; j++) {
+            if(tabuleiro[i][j] == 5) {
+                printf("(%d, %d)\n", i, j);
+            }
+        }
+    }
+ 
  //Habilidade especiais em cruz
  //matriz em cruz
     for(int i = 0;i < 5; i++) {
