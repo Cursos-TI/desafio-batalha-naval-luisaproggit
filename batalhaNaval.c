@@ -17,14 +17,14 @@ int main() {
     int navio2[3];
 
 //Navio Vertical
-    tabuleiro[1][1] = 3;
-    tabuleiro[1][2] = 3;
-    tabuleiro[1][3] = 3;
+    tabuleiro[0][1] = 3;
+    tabuleiro[0][2] = 3;
+    tabuleiro[0][3] = 3;
 
 //Navio Horizontal
-    tabuleiro[3][8] = 3;
-    tabuleiro[4][8] = 3;
-    tabuleiro[5][8] = 3;
+    tabuleiro[3][9] = 3;
+    tabuleiro[4][9] = 3;
+    tabuleiro[5][9] = 3;
 
 //Navio na diagonal
     tabuleiro[7][7] = 3;
@@ -58,7 +58,18 @@ int main() {
     int B[linhas][colunas] = {{9, 8, 7, 6, 5},{4, 3, 2, 1, 0}};
     int matriz[5][5];
 
+    tabuleiro[1][3] = 5;
+    tabuleiro[2][2] = 5;
+    tabuleiro[2][3] = 5;
+    tabuleiro[2][4] = 5;
+    tabuleiro[3][1] = 5;
+    tabuleiro[3][2] = 5;
+    tabuleiro[3][3] = 5;
+    tabuleiro[3][4] = 5;
+    tabuleiro[3][5] = 5;
+
 printf("Habilidade em Cone\n");
+int j;
     for(int i = 1; i <= 5; i++) {
         for(int j = 1; j <= 5; j++) { 
             if(i == 1){
@@ -91,31 +102,33 @@ printf("Habilidade em Cone\n");
             }
              
         }
-                      
         printf("\n");
 
     }
 
-for (int i = 0; i < 5; i++) {
-        for ( int j = 0; j < 5; j++) {
-            if(tabuleiro[i][j] == 5) {
-                printf("(%d, %d)\n", i, j);
-            }
-        }
-    }
- 
  //Habilidade especiais em cruz
  //matriz em cruz
-    for(int i = 0;i < 5; i++) {
+
+    tabuleiro[5][3] = 4;
+    tabuleiro[6][3] = 4;
+    tabuleiro[7][1] = 4;
+    tabuleiro[7][2] = 4;
+    tabuleiro[7][3] = 4;
+    tabuleiro[7][4] = 4;
+    tabuleiro[7][5] = 4;
+    tabuleiro[8][3] = 4;
+    tabuleiro[9][3] = 4;
+
+    for(int i = 0; i < 5; i++){
         for(int j = 0; j < 5; j++) {
             if(i == 2 || j == 2) {
-                matriz[i][j] = 5;
+                matriz[i][j] = 4;
             
             }else{
                 matriz[i][j] = 0;
 
                 if(i == 2 || j == 2) {
-                    matriz[j][i] = 5;
+                    matriz[j][i] = 4;
 
                 }else{
                     matriz[j][i] = 0;
@@ -126,16 +139,23 @@ for (int i = 0; i < 5; i++) {
 
 //imprimindo matriz cruz
 printf("Habilidade em cruz\n");
-
 for(int i = 0;i < 5; i++) {
     for(int j = 0; j < 5; j++) {
         printf("%d", matriz[i][j]);
+        
     }
-    printf("\n");
 
+    printf("\n");
 }
 
-//Habilidade em Octaedro
+//Habilidades especiais em Octaedro
+//matriz em octaedro
+    tabuleiro[4][6] = 2;
+    tabuleiro[5][5] = 2;
+    tabuleiro[5][6] = 2;
+    tabuleiro[5][7] = 2;
+    tabuleiro[6][6] = 2;
+    
 
 printf("Habilidade em Octaedro\n");
 for(int i = 1; i <= 5; i++) {
@@ -148,19 +168,19 @@ for(int i = 1; i <= 5; i++) {
             }
             }else if(i == 2){
                 if(j == 3){
-                    printf("5");
+                    printf("2");
                 }else{
                     printf("0");
                 }
             }else if (i == 3) {
                 if (j >= 2 && j  <= 4){
-                    printf("5"); 
+                    printf("2"); 
                 }else{
                     printf("0");
                 }
             }else if(i == 4){
                 if(j == 3){
-                    printf("5");
+                    printf("2");
                 }else{
                     printf("0");
                 }
@@ -179,6 +199,23 @@ for(int i = 1; i <= 5; i++) {
 
     }
 
+//função exibir no tabuleiro
+
+void exibirTabuleiro(int tabuleiro[5][5], int tamanho){
+    int linha,coluna;
+    for(int linha = 0; linha < 5; linha++) {
+        printf("%d", linha = 1);
+        for(int coluna = 0; coluna < 5; coluna++) {
+            if(tabuleiro[linha][coluna] == -1){
+                printf("**");
+            }else if(tabuleiro[linha][coluna] == 0){
+                printf("0");
+            }
+        }
+    }
+    printf("\n");
+
+}
 //Imprimindo Tabuleiro.
     printf("Tabuleiro Batalha Naval\n");
     printf(" ");//Espaços para alinhar as colunas.
@@ -197,7 +234,6 @@ for(int i = 1; i <= 5; i++) {
         }
         printf("\n");
     }
-
 
     return 0;
 
